@@ -31,8 +31,12 @@ def loopList():
         n = n + 2
     print(L)
 
+def testList():
+    list1 = [1,2,3]
+    print(list1[0:2])
 
 if __name__ == '__main__':
     print(fact(5))
     print(fact1(5))
     loopList()
+    testList()
