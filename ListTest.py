@@ -23,20 +23,36 @@ def fact_fix(num, product):
     return fact_fix(num-1, num*product)
 
 
-def loopList():
+def looplist():
     L = []
     n =1
     while n <= 99:
         L.append(n)
         n = n + 2
     print(L)
+#     splice
+    print(L[:10:2])
+    print(L[::5])
+#     Iteration
+    for i, v in enumerate(L):
+        print(i, v)
 
-def testList():
-    list1 = [1,2,3]
+
+def testlist():
+    list1 = [1, 2, 3]
     print(list1[0:2])
 
+
+def listgenerator():
+    l1 = [x * x for x in range(1, 11)]
+    print(l1)
+    l2 = [x * x for x in range(1, 11) if x % 2 == 0]
+    print(l2)
+
+
 if __name__ == '__main__':
-    print(fact(5))
-    print(fact1(5))
-    loopList()
-    testList()
+    # print(fact(5))
+    # print(fact1(5))
+    # looplist()
+    # testlist()
+    listgenerator()
