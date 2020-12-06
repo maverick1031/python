@@ -29,7 +29,11 @@ def loopList():
     while n <= 99:
         L.append(n)
         n = n + 2
-    print(L)
+    print('original ', L)
+    L.pop(1)
+    print('after pop ', L) 
+    L.append('abc')
+    print('append a str ', L)
 
 def testList():
     list1 = [1,2,3]
@@ -40,3 +44,4 @@ if __name__ == '__main__':
     print(fact1(5))
     loopList()
     testList()
+
