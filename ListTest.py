@@ -1,5 +1,7 @@
 import requests
 
+from functools import reduce
+
 resp = requests.get('https://www.google.com')
 print(resp.status_code)
 # print(resp.text)
@@ -23,7 +25,7 @@ def fact_fix(num, product):
     return fact_fix(num-1, num*product)
 
 
-def looplist():
+def loop_list():
     L = []
     n =1
     while n <= 99:
@@ -44,23 +46,40 @@ def looplist():
         print(i, v)
 
 
-
 def testlist():
     list1 = [1, 2, 3]
     print(list1[0:2])
 
 
-def listgenerator():
+def list_generator():
     l1 = [x * x for x in range(1, 11)]
     print(l1)
     l2 = [x * x for x in range(1, 11) if x % 2 == 0]
     print(l2)
 
 
+def normalize(name):
+    name = name.lower()
+    first_char = name[:1]
+    return first_char.upper() + name[1:]
+
+
+def prod(element_list):
+    def multiple(x, y):
+        return x * y
+    return reduce(multiple, L)
+
+
 if __name__ == '__main__':
     # print(fact(5))
     # print(fact1(5))
-    # looplist()
+    # loop_list()
     # testlist()
-    listgenerator()
+    list_generator()
 
+    L1 = ['smith', 'JackSon', 'scoTT']
+    L2 = list(map(normalize, L1))
+    print(L2)
+
+    L = [3, 4, 5, 6, 7, 8, 9]
+    print(prod(L))

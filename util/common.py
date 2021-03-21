@@ -5,8 +5,7 @@ class Options:
     def __init__(self):
         self.parser = argparse.ArgumentParser()
 
-        self.parser.add_argument('-c', '--color', metavar='yellow|green', type=str, default='green',
-                                 help='color of record')
+        self.parser.add_argument('-c', '--color', metavar='yellow|green', type=str, default='green', help='color of record')
 
         self.opts = self.parser.parse_args()
 
