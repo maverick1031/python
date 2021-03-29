@@ -70,6 +70,19 @@ def prod(element_list):
     return reduce(multiple, L)
 
 
+def str2float(s):
+    num_part = s[:s.index('.')]
+    decimal_part = s[s.index('.')+1:]
+
+    print('number part is ' + num_part + ' decimal part is ' + decimal_part)
+
+    def multiple(x, y):
+        return 10 * x + y
+
+    reduce(multiple, num_part)
+
+
+
 if __name__ == '__main__':
     # print(fact(5))
     # print(fact1(5))
@@ -83,3 +96,5 @@ if __name__ == '__main__':
 
     L = [3, 4, 5, 6, 7, 8, 9]
     print(prod(L))
+
+    str2float('1234.678')
